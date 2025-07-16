@@ -400,20 +400,20 @@
         }
 
         .project-links a {
-            color: #ff6b6b;
+            color: white;
             text-decoration: none;
             font-weight: bold;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
             padding: 8px 16px;
-            border: 1px solid #ff6b6b;
+            border: 1px solid white;
             border-radius: 5px;
             background: transparent;
             cursor: pointer;
         }
 
         .project-links a:hover {
-            color: white;
-            background: #ff6b6b;
+            color: black;
+            background: white;
         }
 
         .view-details-btn {
