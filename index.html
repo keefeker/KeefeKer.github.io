@@ -41,12 +41,14 @@
             justify-content: space-between;
             align-items: center;
             padding: 0.5rem 0;
+            width: 100%;
         }
 
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
             color: white;
+            flex-shrink: 0;
         }
 
         .nav-links {
@@ -54,6 +56,7 @@
             list-style: none;
             gap: 2rem;
             align-items: center;
+            margin-left: auto;
         }
 
         .nav-links a {
@@ -100,91 +103,33 @@
             color: black;
         }
 
-        /* Hero Section */
+        /* Hero Section - Photo Background Only */
         .hero {
-            height: 50vh;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            color: #333;
-            position: relative;
-            overflow: hidden;
+            min-height: 300px;
         }
 
         .hero-image {
             width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            height: auto;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .hero-image img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+            object-fit: contain;
+            object-position: center center;
             display: block;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.4);
-            z-index: 1;
-        }
-
-        .hero-content {
-            z-index: 2;
-            position: relative;
-            animation: fadeInUp 1s ease-out;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            color: white;
-        }
-
-        .hero-content p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            color: white;
-        }
-
-        .cta-button {
-            position: relative;
-            z-index: 3;
-            margin-top: 2rem;
-            display: inline-block;
-            background: transparent;
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border: 2px solid white;
-            border-radius: 0;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background: white;
-            color: #666;
+            max-height: 100vh;
         }
 
         /* Video Modal */
@@ -251,70 +196,7 @@
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         }
 
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-section {
-            background: #999;
-        }
-
-        .profile-img {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #ff9a9e, #fecfef);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: white;
-            margin: 0 auto;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .about-text {
-            color: white;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            transition: transform 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .skill-card h3 {
-            color: white;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .skill-card p {
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        /* Projects Section */
+        /* Projects Section - Now 2nd section */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -393,6 +275,23 @@
             margin-bottom: 1rem;
         }
 
+        .project-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
         .project-links {
             display: flex;
             gap: 1rem;
@@ -423,6 +322,89 @@
         /* Hidden projects for future use */
         .project-hidden {
             display: none;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: left;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-card h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .skill-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .skill-card li {
+            color: rgba(255, 255, 255, 0.9);
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .skill-card li:last-child {
+            border-bottom: none;
+        }
+
+        .skill-card li::before {
+            content: '•';
+            color: white;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+        }
+
+        /* About Section - Now 5th section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff9a9e, #fecfef);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-text {
+            color: white;
+            font-size: 1.1rem;
+            line-height: 1.8;
         }
 
         /* Contact Section */
@@ -563,10 +545,14 @@
                 cursor: pointer;
             }
 
-            .hero-image {
-                width: 100%;
-                height: 200px;
-                max-width: 300px;
+            .hero {
+                min-height: 250px;
+            }
+
+            .hero-image img {
+                object-position: center center;
+                object-fit: contain;
+                max-height: 80vh;
             }
 
             .about-content {
@@ -580,14 +566,19 @@
             }
 
             .footer-links {
-                flex-direction: column;
+                flex-direction: row;
+                justify-content: center;
                 align-items: center;
                 gap: 1rem;
+                flex-wrap: wrap;
             }
 
             .contact-links {
-                flex-direction: column;
+                flex-direction: row;
+                justify-content: center;
                 align-items: center;
+                gap: 1rem;
+                flex-wrap: wrap;
             }
 
             .video-modal-content {
@@ -608,24 +599,20 @@
         <nav class="container">
             <div class="logo">Keefe Ker</div>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><button class="download-btn" onclick="downloadResume()">Download Resume</button></li>
+                <li><a href="files/Keefe_ker_Resume.pdf" target="_blank" class="download-btn">Download Resume</a></li>
             </ul>
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
         </nav>
     </header>
 
+    <!-- 1st Section: Photo Background Only -->
     <section id="home" class="hero">
         <div class="hero-image">
             <img src="images/Front_Image.jpg" alt="Keefe Ker">
-        </div>
-        <div class="hero-content">
-            <h1>Keefe Ker Tan</h1>
-            <p>Robotics Engineering Student</p>
-            <a href="#projects" class="cta-button">View My Work</a>
         </div>
     </section>
 
@@ -640,7 +627,113 @@
         </div>
     </div>
 
-    <section id="about" class="section about-section">
+    <!-- 2nd Section: Projects -->
+    <section id="projects" class="section section-lighter">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="images/ros_navigation_demo.gif" alt="ROS Navigation Demo" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
+                        <span class="fallback-text">Project Gif</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>ROS Navigation with Limo Robot</h3>
+                        <p>Developed a ROS1-based navigation system using RTAB-Map SLAM and the Navigation Stack. Integrated LiDAR and depth camera for live 2D/3D mapping with real-time obstacle avoidance.</p>
+                        <div class="project-skills">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">ROS1</span>
+                            <span class="skill-tag">RTAB-Map</span>
+                            <span class="skill-tag">LiDAR</span>
+                            <span class="skill-tag">SLAM</span>
+                            <span class="skill-tag">Navigation Stack</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="projects/SE-Project1.html" class="view-details-btn">View Details</a>
+                            <a onclick="openVideoModal()">Live Demo</a>
+                            <a href="https://github.com/keefeker/WebsiteTest" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hidden projects for future expansion -->
+                <div class="project-card project-hidden">
+                    <div class="project-img">Project 2</div>
+                    <div class="project-content">
+                        <h3>Project Two</h3>
+                        <p>(summary)</p>
+                        <div class="project-skills">
+                            <span class="skill-tag">Skill 1</span>
+                            <span class="skill-tag">Skill 2</span>
+                            <span class="skill-tag">Skill 3</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#">Live Demo</a>
+                            <a href="#">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card project-hidden">
+                    <div class="project-img">Project 3</div>
+                    <div class="project-content">
+                        <h3>Project Three</h3>
+                        <p>(summary)</p>
+                        <div class="project-skills">
+                            <span class="skill-tag">Skill A</span>
+                            <span class="skill-tag">Skill B</span>
+                            <span class="skill-tag">Skill C</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#">Live Demo</a>
+                            <a href="#">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3rd Section: Skills -->
+    <section id="skills" class="section section-alt">
+        <div class="container">
+            <h2>Skills & Experience</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Robotics & Autonomous Systems</h3>
+                    <ul>
+                        <li>SLAM (Simultaneous Localization and Mapping)</li>
+                        <li>LiDAR-based Localization</li>
+                        <li>Navigation Stack</li>
+                        <li>ROS1 development</li>
+                        <li>Autonomous navigation systems</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Programming & Development</h3>
+                    <ul>
+                        <li>C, C++, Python</li>
+                        <li>HTML, CSS</li>
+                        <li>Linux Development</li>
+                        <li>Git version control</li>
+                        <li>Embedded systems programming</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Technical Systems</h3>
+                    <ul>
+                        <li>RTAB-Map SLAM</li>
+                        <li>RViz visualization</li>
+                        <li>Costmap tuning</li>
+                        <li>DWA planners</li>
+                        <li>Trajectory planning</li>
+                        <li>Multi-sensor integration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4th Section: About Me -->
+    <section id="about" class="section section-lighter">
         <div class="container">
             <h2>About Me</h2>
             <div class="about-content">
@@ -656,72 +749,7 @@
         </div>
     </section>
 
-    <section id="skills" class="section section-alt">
-        <div class="container">
-            <h2>Skills & Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>Robotics & Autonomous Systems</h3>
-                    <p>SLAM (Simultaneous Localization and Mapping), LiDAR-based Localization, Navigation Stack, ROS1 development, and autonomous navigation systems.</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Programming & Development</h3>
-                    <p>C, C++, Python, HTML, CSS, Linux Development, Git version control, and embedded systems programming.</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Technical Systems</h3>
-                    <p>RTAB-Map SLAM, RViz visualization, costmap tuning, DWA planners, trajectory planning, and multi-sensor integration.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="section section-lighter">
-        <div class="container">
-            <h2>Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-    			<div class="project-img">
-        			<img src="images/ros_navigation_demo.gif" alt="ROS Navigation Demo" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
-        			<span class="fallback-text">Project Gif</span>
-    			</div>
-    			<div class="project-content">
-                        <h3>ROS Navigation with Limo Robot</h3>
-                        <p>Developed a ROS1-based navigation system using RTAB-Map SLAM and the Navigation Stack. Integrated LiDAR and depth camera for live 2D/3D mapping with real-time obstacle avoidance.</p>
-                        <div class="project-links">
-			    <a href="projects/SE-Project1.html" class="view-details-btn">View Details</a>
-                            <a onclick="openVideoModal()">Live Demo</a>
-                            <a href="https://github.com/keefeker/WebsiteTest" target="_blank">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Hidden projects for future expansion -->
-                <div class="project-card project-hidden">
-                    <div class="project-img">Project 2</div>
-                    <div class="project-content">
-                        <h3>Project Two</h3>
-                        <p>(summary)</p>
-                        <div class="project-links">
-                            <a href="#">Live Demo</a>
-                            <a href="#">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card project-hidden">
-                    <div class="project-img">Project 3</div>
-                    <div class="project-content">
-                        <h3>Project Three</h3>
-                        <p>(summary)</p>
-                        <div class="project-links">
-                            <a href="#">Live Demo</a>
-                            <a href="#">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- 5th Section: Contact (with Resume button) -->
     <section id="contact" class="section section-alt">
         <div class="container">
             <h2>Get In Touch</h2>
@@ -731,6 +759,7 @@
                     <a href="mailto:keefeker@gmail.com">Email</a>
                     <a href="https://www.linkedin.com/in/keefekertan/" target="_blank">LinkedIn</a>
                     <a href="https://github.com/keefeker/WebsiteTest" target="_blank">GitHub</a>
+                    <a href="files/Keefe_ker_Resume.pdf" target="_blank">Resume</a>
                 </div>
             </div>
         </div>
@@ -807,6 +836,8 @@
 
         // Resume download functionality
         function downloadResume() {
+            // This function is kept for backward compatibility but no longer needed
+            // The download now happens directly via the HTML download attribute
             const link = document.createElement('a');
             link.href = 'files/Keefe_ker_Resume.pdf';
             link.download = 'Keefe_ker_Resume.pdf';
@@ -833,7 +864,7 @@
                 header.style.background = 'rgba(0, 0, 0, 0.9)';
             }
             
-            // Handle footer and solid banner visibility
+            // Handle footer and solid banner visibility - now checking contact section (last section)
             const contactRect = contactSection.getBoundingClientRect();
             const windowHeight = window.innerHeight;
             
