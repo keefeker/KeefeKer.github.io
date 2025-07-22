@@ -106,30 +106,30 @@
         /* Hero Section - Photo Background Only */
         .hero {
             width: 100%;
+            aspect-ratio: 1280 / 426;
             position: relative;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 300px;
         }
 
         .hero-image {
             width: 100%;
-            height: auto;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
         }
 
         .hero-image img {
             width: 100%;
-            height: auto;
+            height: 100%;
             object-fit: contain;
             object-position: center center;
             display: block;
-            max-height: 100vh;
         }
 
         /* Video Modal */
@@ -546,13 +546,12 @@
             }
 
             .hero {
-                min-height: 250px;
+                aspect-ratio: 1280 / 426;
             }
 
             .hero-image img {
                 object-position: center center;
                 object-fit: contain;
-                max-height: 80vh;
             }
 
             .about-content {
@@ -698,34 +697,33 @@
             <h2>Skills & Experience</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <h3>Robotics & Autonomous Systems</h3>
+                    <h3>Programming/Software</h3>
+                    <ul>
+                        <li>HTML, CSS</li>
+                        <li>C, C++</li>
+                        <li>Python</li>
+                        <li>ROS1</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Technical Skills</h3>
                     <ul>
                         <li>SLAM (Simultaneous Localization and Mapping)</li>
                         <li>LiDAR-based Localization</li>
-                        <li>Navigation Stack</li>
-                        <li>ROS1 development</li>
-                        <li>Autonomous navigation systems</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3>Programming & Development</h3>
-                    <ul>
-                        <li>C, C++, Python</li>
-                        <li>HTML, CSS</li>
-                        <li>Linux Development</li>
-                        <li>Git version control</li>
-                        <li>Embedded systems programming</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3>Technical Systems</h3>
-                    <ul>
+                        <li>Navigation</li>
                         <li>RTAB-Map SLAM</li>
                         <li>RViz visualization</li>
                         <li>Costmap tuning</li>
-                        <li>DWA planners</li>
-                        <li>Trajectory planning</li>
-                        <li>Multi-sensor integration</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Leadership Skills</h3>
+                    <ul>
+                        <li>Communication</li>
+                        <li>Team Collaboration</li>
+                        <li>Problem-Solving</li>
+                        <li>Adaptability</li>
+                        <li>Decision-Making</li>
                     </ul>
                 </div>
             </div>
